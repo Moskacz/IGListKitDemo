@@ -11,6 +11,12 @@ import IGListKit
 
 class ContactsSectionController: ListSectionController {
     
+    var contact: ImmutableContact
+    
+    init(contact: ImmutableContact) {
+        self.contact = contact
+    }
+    
     override func sizeForItem(at index: Int) -> CGSize {
         return CGSize(width: collectionContext!.containerSize.width, height: 40.0)
     }
@@ -20,7 +26,11 @@ class ContactsSectionController: ListSectionController {
             fatalError("couldn't create contact cell")
         }
         
-        cell.contactNameLabel.text = "\(index)"
+        cell.contactNameLabel.text = contact.displayName
         return cell
+    }
+    
+    override func didUpdate(to object: Any) {
+        contact = object as! ImmutableContact
     }
 }

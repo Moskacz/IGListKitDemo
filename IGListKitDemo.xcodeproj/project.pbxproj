@@ -21,6 +21,8 @@
 		356A24191EFBD61C00C0C5CF /* Recipient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A24171EFBD61C00C0C5CF /* Recipient+CoreDataProperties.swift */; };
 		356A241B1EFBD6F400C0C5CF /* RecipientDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A241A1EFBD6F400C0C5CF /* RecipientDataProvider.swift */; };
 		356A241D1EFBD90800C0C5CF /* DataProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A241C1EFBD90800C0C5CF /* DataProviderDelegate.swift */; };
+		356A241F1EFBE4A100C0C5CF /* ContactsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A241E1EFBE4A100C0C5CF /* ContactsDataProvider.swift */; };
+		356A24211EFBE4E800C0C5CF /* ImmutableContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A24201EFBE4E800C0C5CF /* ImmutableContact.swift */; };
 		35A5710F1EFBBB0F009A93CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A5710E1EFBBB0F009A93CE /* AppDelegate.swift */; };
 		35A571111EFBBB0F009A93CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A571101EFBBB0F009A93CE /* ViewController.swift */; };
 		35A571141EFBBB0F009A93CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A571121EFBBB0F009A93CE /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		356A24171EFBD61C00C0C5CF /* Recipient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipient+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		356A241A1EFBD6F400C0C5CF /* RecipientDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientDataProvider.swift; sourceTree = "<group>"; };
 		356A241C1EFBD90800C0C5CF /* DataProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderDelegate.swift; sourceTree = "<group>"; };
+		356A241E1EFBE4A100C0C5CF /* ContactsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDataProvider.swift; sourceTree = "<group>"; };
+		356A24201EFBE4E800C0C5CF /* ImmutableContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmutableContact.swift; sourceTree = "<group>"; };
 		35A5710B1EFBBB0F009A93CE /* IGListKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGListKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A5710E1EFBBB0F009A93CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35A571101EFBBB0F009A93CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				356A24121EFBD2E500C0C5CF /* ImmutableRecipient.swift */,
 				356A241A1EFBD6F400C0C5CF /* RecipientDataProvider.swift */,
 				356A241C1EFBD90800C0C5CF /* DataProviderDelegate.swift */,
+				356A241E1EFBE4A100C0C5CF /* ContactsDataProvider.swift */,
+				356A24201EFBE4E800C0C5CF /* ImmutableContact.swift */,
 			);
 			path = IGListKitDemo;
 			sourceTree = "<group>";
@@ -221,8 +227,10 @@
 				356A23FF1EFBC0C300C0C5CF /* RecipientSectionController.swift in Sources */,
 				356A241B1EFBD6F400C0C5CF /* RecipientDataProvider.swift in Sources */,
 				35A5710F1EFBBB0F009A93CE /* AppDelegate.swift in Sources */,
+				356A241F1EFBE4A100C0C5CF /* ContactsDataProvider.swift in Sources */,
 				356A24111EFBD0FC00C0C5CF /* RecipientDataController.swift in Sources */,
 				356A24071EFBC5C600C0C5CF /* ContactCell.swift in Sources */,
+				356A24211EFBE4E800C0C5CF /* ImmutableContact.swift in Sources */,
 				35A571171EFBBB0F009A93CE /* IGListKitDemo.xcdatamodeld in Sources */,
 				356A240B1EFBCBD100C0C5CF /* CoreDataStack.swift in Sources */,
 			);

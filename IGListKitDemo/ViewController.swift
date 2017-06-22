@@ -14,9 +14,11 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
     @IBOutlet private weak var collectionView: UICollectionView!
     
     let coreDataStack = CoreDataStackImpl()
+    let contactsDataProvider = ContactsDataProvider()
     var recipientDataProvider: RecipientDataProvider? = nil
     var recipientDataController: RecipientDataController? = nil
-    var recipients: [ImmutableRecipient]? = nil
+    var recipients = [ImmutableRecipient]()
+    var contacts = [ImmutableContact]()
     
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
@@ -26,7 +28,7 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
         super.viewDidLoad()
         recipientDataProvider = RecipientDataProvider(coreDataStack: coreDataStack)
         recipientDataProvider?.delegate = self
-        recipients = recipientDataProvider?.getRecipients()
+        recipients = recipientDataProvider?.getRecipients() ?? []
         
         recipientDataController = RecipientDataController(coreDataStack: coreDataStack)
         
@@ -37,11 +39,18 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
     // MARK: ListAdapterDataSource
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return recipients ?? []
+        var data = [ListDiffable]()
+        data += (recipients as [ListDiffable])
+        data += (contacts as [ListDiffable])
+        return data
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return RecipientSectionController(recipient: object as! ImmutableRecipient)
+        if object is ImmutableRecipient {
+            return RecipientSectionController(recipient: object as! ImmutableRecipient)
+        } else {
+            return ContactsSectionController(contact: object as! ImmutableContact)
+        }
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
@@ -53,7 +62,8 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
     // MARK: DataProviderDelegate
     
     func performUpdatesForCoreDataChange(animated: Bool) {
-        recipients = recipientDataProvider?.getRecipients()
+        recipients = recipientDataProvider?.getRecipients() ?? []
+        contacts = contactsDataProvider.getContacts() ?? []
         adapter.performUpdates(animated: animated, completion: nil)
     }
     
@@ -61,6 +71,13 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
     
     @IBAction func addRecipientButtonTapped(_ sender: UIButton) {
         recipientDataController?.addRandomRecipient()
+    }
+    
+    @IBAction func askForPhoneBookAccess(_ sender: UIButton) {
+        contactsDataProvider.requestForAccess { (granted: Bool) in
+            guard granted else { return }
+            self.performUpdatesForCoreDataChange(animated: true)
+        }
     }
 }
 
