@@ -16,7 +16,7 @@ protocol CoreDataStack {
 
 class CoreDataStackImpl: CoreDataStack {
     
-    private let container: NSPersistentContainer = {
+    lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "IGListKitDemo")
         container.loadPersistentStores(completionHandler: { (description: NSPersistentStoreDescription, error: Error?) in
             if let loadError = error {

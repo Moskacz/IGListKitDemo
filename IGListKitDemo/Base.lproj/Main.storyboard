@@ -53,7 +53,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PN8-PO-rer">
                                 <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
-                                <state key="normal" title="Ask for phone book"/>
+                                <state key="normal" title="Add phone book contacts"/>
                                 <connections>
                                     <action selector="askForPhoneBookAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nOW-Mc-X8X"/>
                                 </connections>

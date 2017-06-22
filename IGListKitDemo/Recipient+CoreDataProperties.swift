@@ -18,6 +18,6 @@ extension Recipient {
 
     @NSManaged public var fistName: String
     @NSManaged public var lastName: String
-    @NSManaged public var identifier: Int64
+    @NSManaged public var creationTimeStamp: Double
 
 }

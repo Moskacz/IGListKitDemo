@@ -13,7 +13,7 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    let coreDataStack = CoreDataStackImpl()
+    var coreDataStack: CoreDataStack!
     let contactsDataProvider = ContactsDataProvider()
     var recipientDataProvider: RecipientDataProvider? = nil
     var recipientDataController: RecipientDataController? = nil
@@ -29,9 +29,7 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
         recipientDataProvider = RecipientDataProvider(coreDataStack: coreDataStack)
         recipientDataProvider?.delegate = self
         recipients = recipientDataProvider?.getRecipients() ?? []
-        
         recipientDataController = RecipientDataController(coreDataStack: coreDataStack)
-        
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
@@ -63,7 +61,6 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
     
     func performUpdatesForCoreDataChange(animated: Bool) {
         recipients = recipientDataProvider?.getRecipients() ?? []
-        contacts = contactsDataProvider.getContacts() ?? []
         adapter.performUpdates(animated: animated, completion: nil)
     }
     
@@ -76,7 +73,8 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
     @IBAction func askForPhoneBookAccess(_ sender: UIButton) {
         contactsDataProvider.requestForAccess { (granted: Bool) in
             guard granted else { return }
-            self.performUpdatesForCoreDataChange(animated: true)
+            self.contacts = self.contactsDataProvider.getContacts() ?? []
+            self.adapter.performUpdates(animated: true, completion: nil)
         }
     }
 }

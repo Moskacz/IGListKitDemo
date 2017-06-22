@@ -11,10 +11,11 @@ import IGListKit
 
 class ContactsSectionController: ListSectionController {
     
-    var contact: ImmutableContact
+    private var contact: ImmutableContact
     
     init(contact: ImmutableContact) {
         self.contact = contact
+        super.init()
     }
     
     override func sizeForItem(at index: Int) -> CGSize {

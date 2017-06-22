@@ -16,7 +16,7 @@ class RecipientDataProvider: NSObject, NSFetchedResultsControllerDelegate {
     
     lazy var recipientsFRC: NSFetchedResultsController<Recipient> = {
         let fetchRequest: NSFetchRequest<Recipient> = Recipient.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "identifier", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "creationTimeStamp", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: self.coreDataStack.getViewContext(),
@@ -38,7 +38,7 @@ class RecipientDataProvider: NSObject, NSFetchedResultsControllerDelegate {
     
     func getRecipients() -> [ImmutableRecipient]? {
         guard let recipients = recipientsFRC.fetchedObjects else { return nil }
-        return recipients.flatMap { ImmutableRecipient(identifier: $0.identifier, firstName: $0.fistName, lastName: $0.lastName) }
+        return recipients.flatMap { ImmutableRecipient(creationTimeStamp: $0.creationTimeStamp, firstName: $0.fistName, lastName: $0.lastName) }
     }
     
     // MARK: NSFetchedResultsControllerDelegate

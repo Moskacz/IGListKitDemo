@@ -12,7 +12,6 @@ import CoreData
 class RecipientDataController {
     
     private let coreDataStack: CoreDataStack
-    private var identifier: Int64 = 0
     
     init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
@@ -23,11 +22,10 @@ class RecipientDataController {
             let recipient = NSEntityDescription.insertNewObject(forEntityName: "Recipient", into: context) as! Recipient
             recipient.fistName = "Jan"
             recipient.lastName = "Kowalski"
-            recipient.identifier = self.identifier
+            recipient.creationTimeStamp = Date().timeIntervalSince1970
             
             do {
                 try context.save()
-                self.identifier += 1
             } catch {
                 print(error)
             }

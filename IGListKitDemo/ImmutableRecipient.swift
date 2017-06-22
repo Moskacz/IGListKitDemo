@@ -11,18 +11,18 @@ import IGListKit
 
 class ImmutableRecipient: ListDiffable {
     
-    let identifier: Int64
+    let creationTimeStamp: Double
     let firstName: String
     let lastName: String
     
-    init(identifier: Int64, firstName: String, lastName: String) {
-        self.identifier = identifier
+    init(creationTimeStamp: Double, firstName: String, lastName: String) {
+        self.creationTimeStamp = creationTimeStamp
         self.firstName = firstName
         self.lastName = lastName
     }
     
     func diffIdentifier() -> NSObjectProtocol {
-        return NSNumber(value: identifier)
+        return NSNumber(value: creationTimeStamp)
     }
     
     func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
@@ -30,6 +30,6 @@ class ImmutableRecipient: ListDiffable {
             return false
         }
         
-        return toObject.identifier == identifier
+        return (toObject.creationTimeStamp - creationTimeStamp) < Double.leastNonzeroMagnitude
     }
 }
