@@ -9,7 +9,13 @@
 import Foundation
 import IGListKit
 
-class RecipientsSectionController: ListSectionController {
+class RecipientSectionController: ListSectionController {
+    
+    var recipient: ImmutableRecipient
+    
+    init(recipient: ImmutableRecipient) {
+        self.recipient = recipient
+    }
     
     override func sizeForItem(at index: Int) -> CGSize {
         return CGSize(width: collectionContext!.containerSize.width, height: 55.0)
@@ -20,7 +26,11 @@ class RecipientsSectionController: ListSectionController {
             fatalError("couldn't create recipient cell")
         }
         
-        cell.recipientNameLabel.text = "\(index)"
+        cell.recipientNameLabel.text = recipient.firstName.appending(" ").appending(recipient.lastName)
         return cell
+    }
+    
+    override func didUpdate(to object: Any) {
+        recipient = object as! ImmutableRecipient
     }
 }

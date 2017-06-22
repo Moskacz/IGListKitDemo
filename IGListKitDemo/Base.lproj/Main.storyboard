@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4nj-er-wLx">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dlK-yV-pxV">
                                     <size key="itemSize" width="50" height="50"/>
@@ -41,13 +41,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn6-ye-oyK">
+                                <rect key="frame" x="0.0" y="617" width="187.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hFv-8z-hjJ"/>
+                                </constraints>
+                                <state key="normal" title="Add recipient"/>
+                                <connections>
+                                    <action selector="addRecipientButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZS-gP-pXF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PN8-PO-rer">
+                                <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PN8-PO-rer" firstAttribute="width" secondItem="Cn6-ye-oyK" secondAttribute="width" id="G6Z-n4-WgB"/>
+                            <constraint firstItem="PN8-PO-rer" firstAttribute="leading" secondItem="Cn6-ye-oyK" secondAttribute="trailing" id="GvB-I8-B07"/>
                             <constraint firstAttribute="trailing" secondItem="4nj-er-wLx" secondAttribute="trailing" id="JSL-qi-DrL"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4nj-er-wLx" secondAttribute="bottom" id="a9x-uu-9DF"/>
+                            <constraint firstAttribute="trailing" secondItem="PN8-PO-rer" secondAttribute="trailing" id="LdO-zS-LRq"/>
+                            <constraint firstItem="Cn6-ye-oyK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OH1-Vr-n1P"/>
+                            <constraint firstItem="PN8-PO-rer" firstAttribute="height" secondItem="Cn6-ye-oyK" secondAttribute="height" id="YgC-Ks-mVz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cn6-ye-oyK" secondAttribute="bottom" id="bZI-S2-GBS"/>
+                            <constraint firstItem="PN8-PO-rer" firstAttribute="top" secondItem="4nj-er-wLx" secondAttribute="bottom" id="ktN-O1-29U"/>
                             <constraint firstItem="4nj-er-wLx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="npf-07-uMu"/>
                             <constraint firstItem="4nj-er-wLx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qnP-i4-sCv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PN8-PO-rer" secondAttribute="bottom" id="uWR-C0-2tA"/>
                         </constraints>
                     </view>
                     <connections>
