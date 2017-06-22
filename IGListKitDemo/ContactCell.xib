@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Q2S-gI-qNZ" customClass="ContactCell" customModule="IGListKitDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="453" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="453" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-DA-dSF">
+                        <rect key="frame" x="8" y="8" width="437" height="120"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="eMF-DA-dSF" firstAttribute="top" secondItem="Q2S-gI-qNZ" secondAttribute="top" constant="8" id="0x9-bn-Sen"/>
+                <constraint firstItem="eMF-DA-dSF" firstAttribute="leading" secondItem="Q2S-gI-qNZ" secondAttribute="leading" constant="8" id="7dN-E5-Ziw"/>
+                <constraint firstAttribute="bottom" secondItem="eMF-DA-dSF" secondAttribute="bottom" constant="8" id="GoT-sh-Ehg"/>
+                <constraint firstAttribute="trailing" secondItem="eMF-DA-dSF" secondAttribute="trailing" constant="8" id="Nlh-ZV-weK"/>
+            </constraints>
+            <size key="customSize" width="453" height="136"/>
+            <connections>
+                <outlet property="contactNameLabel" destination="eMF-DA-dSF" id="vgX-87-Ki7"/>
+            </connections>
+            <point key="canvasLocation" x="14.5" y="25"/>
+        </collectionViewCell>
+    </objects>
+</document>
