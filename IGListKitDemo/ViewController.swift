@@ -9,15 +9,33 @@
 import UIKit
 import IGListKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ListAdapterDataSource {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    lazy var adapter: ListAdapter = {
+        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        adapter.collectionView = collectionView
+        adapter.dataSource = self
     }
 
+    // MARK: ListAdapterDataSource
+    
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return ["a", "b", "c", "d"] as [ListDiffable]
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return ContactsSectionController()
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
+    }
 
 }
 

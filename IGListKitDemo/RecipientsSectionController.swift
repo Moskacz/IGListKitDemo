@@ -16,7 +16,7 @@ class RecipientsSectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let cell = collectionContext?.dequeueReusableCell(of: RecipientCell.self, for: self, at: index) as? RecipientCell else {
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "RecipientCell", bundle: Bundle.main, for: self, at: index) as? RecipientCell else {
             fatalError("couldn't create recipient cell")
         }
         
