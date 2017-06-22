@@ -28,10 +28,18 @@ class ContactsDataProvider {
         let keys: [CNKeyDescriptor] = [CNContactGivenNameKey as NSString,
                                        CNContactMiddleNameKey as NSString,
                                        CNContactFamilyNameKey as NSString]
-        let predicate = CNContact.predicateForContactsInContainer(withIdentifier: store.defaultContainerIdentifier())
-        
+
         do {
-            let contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
+            let containers = try store.containers(matching: nil)
+            let contacts = containers.map({ (container: CNContainer) -> [CNContact] in
+                let predicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
+                do {
+                    return try store.unifiedContacts(matching: predicate, keysToFetch: keys)
+                } catch {
+                    return []
+                }
+            }).flatMap { $0}
+            
             return contacts.map { (contact: CNContact) -> ImmutableContact in
                 let nameComponents = [contact.givenName, contact.middleName, contact.familyName].filter { !$0.isEmpty }
                 let displayName = nameComponents.joined(separator: " ")
