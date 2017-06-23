@@ -45,21 +45,28 @@
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqj-62-pQ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="50"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
                                             <action selector="addRecipientButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HgV-ae-g5x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-0h-jOh">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="50"/>
                                         <state key="normal" title="Remove"/>
                                         <connections>
                                             <action selector="deleteRecipientButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51s-1U-EqS"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bt-qH-S0D">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="50"/>
+                                        <state key="normal" title="Reorder"/>
+                                        <connections>
+                                            <action selector="reorderRecipientButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqo-uP-jDy"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXu-cT-S1R">
-                                        <rect key="frame" x="250" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="50"/>
                                         <state key="normal" title="Phone book"/>
                                         <connections>
                                             <action selector="askForPhoneBookAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2L-6B-NDV"/>

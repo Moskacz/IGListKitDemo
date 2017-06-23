@@ -81,5 +81,9 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
     @IBAction func deleteRecipientButtonTapped(_sender: UIButton) {
         recipientDataController?.removeRandomRecipient()
     }
+    
+    @IBAction func reorderRecipientButtonTapped(_sender: UIButton) {
+        recipientDataController?.reorderFirstRecipient()
+    }
 }
 

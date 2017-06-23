@@ -42,4 +42,16 @@ class RecipientDataController {
             }
         }
     }
+    
+    func reorderFirstRecipient() {
+        guard let recipients = coreDataStack.getViewContext().registeredObjects as? Set<Recipient> else {
+            return
+        }
+        
+        let sortedRecipients = recipients.sorted { (lhs:Recipient, rhs:Recipient) -> Bool in
+            return lhs.creationTimeStamp < rhs.creationTimeStamp
+        }
+        
+        sortedRecipients.first?.creationTimeStamp = Date().timeIntervalSince1970
+    }
 }
