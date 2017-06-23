@@ -31,4 +31,15 @@ class RecipientDataController {
             }
         }
     }
+    
+    func removeRandomRecipient() {
+        if let object = coreDataStack.getViewContext().registeredObjects.first {
+            coreDataStack.getViewContext().delete(object)
+            do {
+                try coreDataStack.getViewContext().save()
+            } catch {
+                print("error")
+            }
+        }
+    }
 }

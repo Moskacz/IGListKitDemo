@@ -41,37 +41,45 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn6-ye-oyK">
-                                <rect key="frame" x="0.0" y="617" width="187.5" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-E5-Xy7">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqj-62-pQ8">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addRecipientButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HgV-ae-g5x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-0h-jOh">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="50"/>
+                                        <state key="normal" title="Remove"/>
+                                        <connections>
+                                            <action selector="deleteRecipientButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51s-1U-EqS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXu-cT-S1R">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="50"/>
+                                        <state key="normal" title="Phone book"/>
+                                        <connections>
+                                            <action selector="askForPhoneBookAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2L-6B-NDV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="hFv-8z-hjJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="1Vz-X3-lrx"/>
                                 </constraints>
-                                <state key="normal" title="Add recipient"/>
-                                <connections>
-                                    <action selector="addRecipientButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZS-gP-pXF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PN8-PO-rer">
-                                <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
-                                <state key="normal" title="Add phone book contacts"/>
-                                <connections>
-                                    <action selector="askForPhoneBookAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nOW-Mc-X8X"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PN8-PO-rer" firstAttribute="width" secondItem="Cn6-ye-oyK" secondAttribute="width" id="G6Z-n4-WgB"/>
-                            <constraint firstItem="PN8-PO-rer" firstAttribute="leading" secondItem="Cn6-ye-oyK" secondAttribute="trailing" id="GvB-I8-B07"/>
                             <constraint firstAttribute="trailing" secondItem="4nj-er-wLx" secondAttribute="trailing" id="JSL-qi-DrL"/>
-                            <constraint firstAttribute="trailing" secondItem="PN8-PO-rer" secondAttribute="trailing" id="LdO-zS-LRq"/>
-                            <constraint firstItem="Cn6-ye-oyK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OH1-Vr-n1P"/>
-                            <constraint firstItem="PN8-PO-rer" firstAttribute="height" secondItem="Cn6-ye-oyK" secondAttribute="height" id="YgC-Ks-mVz"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cn6-ye-oyK" secondAttribute="bottom" id="bZI-S2-GBS"/>
-                            <constraint firstItem="PN8-PO-rer" firstAttribute="top" secondItem="4nj-er-wLx" secondAttribute="bottom" id="ktN-O1-29U"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sd3-E5-Xy7" secondAttribute="bottom" id="KZS-EA-wmi"/>
+                            <constraint firstItem="sd3-E5-Xy7" firstAttribute="top" secondItem="4nj-er-wLx" secondAttribute="bottom" id="fkR-sj-OhD"/>
+                            <constraint firstItem="sd3-E5-Xy7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mBF-53-1gS"/>
                             <constraint firstItem="4nj-er-wLx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="npf-07-uMu"/>
                             <constraint firstItem="4nj-er-wLx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qnP-i4-sCv"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PN8-PO-rer" secondAttribute="bottom" id="uWR-C0-2tA"/>
+                            <constraint firstAttribute="trailing" secondItem="sd3-E5-Xy7" secondAttribute="trailing" id="sIr-cp-X0F"/>
                         </constraints>
                     </view>
                     <connections>
@@ -80,6 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

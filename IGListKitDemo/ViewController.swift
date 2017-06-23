@@ -77,5 +77,9 @@ class ViewController: UIViewController, ListAdapterDataSource, DataProviderDeleg
             self.adapter.performUpdates(animated: true, completion: nil)
         }
     }
+    
+    @IBAction func deleteRecipientButtonTapped(_sender: UIButton) {
+        recipientDataController?.removeRandomRecipient()
+    }
 }
 
