@@ -41,32 +41,32 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-E5-Xy7">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-E5-Xy7">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqj-62-pQ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
                                             <action selector="addRecipientButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HgV-ae-g5x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-0h-jOh">
-                                        <rect key="frame" x="94" y="0.0" width="93.5" height="50"/>
+                                        <rect key="frame" x="50.5" y="0.0" width="93" height="50"/>
                                         <state key="normal" title="Remove"/>
                                         <connections>
                                             <action selector="deleteRecipientButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51s-1U-EqS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bt-qH-S0D">
-                                        <rect key="frame" x="187.5" y="0.0" width="94" height="50"/>
+                                        <rect key="frame" x="143.5" y="0.0" width="93" height="50"/>
                                         <state key="normal" title="Reorder"/>
                                         <connections>
                                             <action selector="reorderRecipientButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqo-uP-jDy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXu-cT-S1R">
-                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="50"/>
+                                        <rect key="frame" x="236.5" y="0.0" width="138.5" height="50"/>
                                         <state key="normal" title="Phone book"/>
                                         <connections>
                                             <action selector="askForPhoneBookAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2L-6B-NDV"/>
@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="68" y="102"/>
         </scene>
     </scenes>
 </document>
